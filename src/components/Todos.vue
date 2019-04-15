@@ -2,9 +2,9 @@
   <div>
     <p class="sort-btns">
       Sort by:
-      <button id="sort-by-id" v-bind:class="[sortById]" v-on:click="sortBy('Id')">ID</button>
-      <button id="sort-by-order" v-bind:class="[sortByOrder]" v-on:click="sortBy('Order')">Order</button>
-      <button id="sort-by-random" v-bind:class="[sortByRandom]" v-on:click="sortBy('Random')">Random</button>
+      <button id="sort-by-id" v-bind:class="[sortById]" v-on:click="sortBy('id')">ID</button>
+      <button id="sort-by-order" v-bind:class="[sortByOrder]" v-on:click="sortBy('order')">Order</button>
+      <button id="sort-by-random" v-bind:class="[sortByRandom]" v-on:click="sortBy('random')">Random</button>
     </p>
 
     <!-- TODO List to Populate -->
@@ -51,9 +51,9 @@ export default {
       this.$store.dispatch({ type: Actions.SELECTED_TODO, selected: todo })
     },
     sortBy (prop) {
-      this.sortById = (prop === 'Id') ? 'selected' : ''
-      this.sortByOrder = (prop === 'Order') ? 'selected' : ''
-      this.sortByRandom = (prop === 'Random') ? 'selected' : ''
+      this.sortById = (prop === 'id') ? 'selected' : ''
+      this.sortByOrder = (prop === 'order') ? 'selected' : ''
+      this.sortByRandom = (prop === 'random') ? 'selected' : ''
       this.$store.dispatch({ type: Actions.SORT_TODOS, prop: prop })
     }
   }

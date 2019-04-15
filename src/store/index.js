@@ -27,7 +27,7 @@ export default new Vuex.Store({
       state.selectedTodo = payload
     },
     [Actions.SORT_TODOS] (state, payload) {
-      if (payload !== 'Random') {
+      if (payload !== 'random') {
         state.todos.sort((a, b) => a[payload] - b[payload])
       } else {
         state.todos.sort((a, b) => 0.5 - Math.random())
@@ -41,7 +41,9 @@ export default new Vuex.Store({
     [Actions.ADD_TODOS] ({ commit }, payload) {
       // adding order to each item
       payload.todos.forEach((todo, index) => {
-        todo.order = index
+        if (todo.order === undefined || todo.order === null) {
+          todo.order = index
+        }
       })
       commit(Actions.ADD_TODOS, payload.todos)
     },

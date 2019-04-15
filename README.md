@@ -1,4 +1,4 @@
-# vuex-todo
+# VuexTodo
 
 > A common todo list app with drag-and-drop sorting
 
