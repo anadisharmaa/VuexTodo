@@ -41,9 +41,7 @@ export default new Vuex.Store({
     [Actions.ADD_TODOS] ({ commit }, payload) {
       // adding order to each item
       payload.todos.forEach((todo, index) => {
-        if (todo.order === undefined || todo.order === null) {
-          todo.order = index
-        }
+        todo.order = index
       })
       commit(Actions.ADD_TODOS, payload.todos)
     },
